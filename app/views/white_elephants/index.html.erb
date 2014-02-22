@@ -1,0 +1,37 @@
+<h1>Listing white_elephants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>String</th>
+      <th>Countries visited</th>
+      <th>Integer</th>
+      <th>Country</th>
+      <th>String</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @white_elephants.each do |white_elephant| %>
+      <tr>
+        <td><%= white_elephant.name %></td>
+        <td><%= white_elephant.string %></td>
+        <td><%= white_elephant.countries_visited %></td>
+        <td><%= white_elephant.integer %></td>
+        <td><%= white_elephant.country %></td>
+        <td><%= white_elephant.string %></td>
+        <td><%= link_to 'Show', white_elephant %></td>
+        <td><%= link_to 'Edit', edit_white_elephant_path(white_elephant) %></td>
+        <td><%= link_to 'Destroy', white_elephant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New White elephant', new_white_elephant_path %>
